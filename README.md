@@ -51,7 +51,8 @@ After you're finished please remove all the comments and instructions!
 # 📖 ROR Blog app <a name="about-project"></a>
 
 This is a blog app which uses Ruby on Rails for backend and allows users to read peoples posts and comments and allows people who sign up to add their posts and comment as well as like others posts, it also integrates with PostgreSQL
-
+The figure below is the ERD for the project:
+<img src='/Screenshot from 2023-03-28 19-23-00.png'>
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
