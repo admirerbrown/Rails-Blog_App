@@ -5,7 +5,7 @@ RSpec.describe Post, type: :model do
   post = Post.create(author: user1, title: 'Hello', text: 'This is my first post')
 
   it 'title should be present' do
-    puts check = user1.valid?
+    check = user1.valid?
 
     expect(check).to eq(true)
   end
