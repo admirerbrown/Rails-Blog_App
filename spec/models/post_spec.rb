@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  user1 = User.new(name: 'John', photo: 'http//:www.myphoto.com', bio: 'software developer from Germany')
+  user1 = User.create(name: 'Jude', photo: 'http//:www.myphoto.com', bio: 'software developer from Germany')
   post = Post.create(author: user1, title: 'Hello', text: 'This is my first post')
 
   it 'title should be present' do
@@ -34,5 +34,19 @@ RSpec.describe Post, type: :model do
     check = user1.posts_counter
 
     expect(check).to be > 0
+  end
+
+  it '#recent_comments should show 5 recent comments on post' do
+    Comment.new(post: post, user_id: user1.id, text: 'Hi Tom!').save
+    Comment.new(post: post, user_id: user1.id, text: 'Hi Tom!').save
+    Comment.new(post: post, user_id: user1.id, text: 'Hi Tom!').save
+    Comment.new(post: post, user_id: user1.id, text: 'Hi Tom!').save
+    Comment.new(post: post, user_id: user1.id, text: 'Hi Tom!').save
+    Comment.new(post: post, user_id: user1.id, text: 'Hi Tom!').save
+    Comment.new(post: post, user_id: user1.id, text: 'Hi Tom!').save
+
+    recent_comments = post.recent_comments
+
+    expect(recent_comments.size).to eq(5)
   end
 end
