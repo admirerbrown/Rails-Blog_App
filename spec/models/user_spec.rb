@@ -30,7 +30,7 @@ RSpec.describe User, type: :model do
     Post.create(author: first_user, title: 'Hello', text: 'This is my fourth post')
     Post.create(author: first_user, title: 'Hello', text: 'This is my fifth post')
     curr_posts = first_user.recent_posts
-    puts result = curr_posts.size
+    result = curr_posts.size
 
     expect(result).to eq(3)
   end
