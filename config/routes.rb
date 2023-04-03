@@ -5,13 +5,14 @@ Rails.application.routes.draw do
   # resources :users, only: [:show]
 
   #! Defines test routes for users actions... delete after exercise
+  get '/users/:user_id/posts', to: 'posts#index', as: 'user_posts'
+  get '/users/:id/posts/:post_id', to: 'posts#show', as: 'user_post'
+  get '/users', to:'users#index', as: 'users'
   get '/users/:id', to: 'users#show', as: 'user'
-  get '/users/:user_id/posts', to: 'users#user_posts', as: 'user_posts'
-  get 'users/:id/posts/:post_id', to: 'users#post_details', as: 'user_post'
 
 
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root 'home#index', as: 'users'
+  
 end
