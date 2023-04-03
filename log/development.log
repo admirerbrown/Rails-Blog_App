@@ -3337,3 +3337,136 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 2864)
 
 
+Started GET "/" for ::1 at 2023-04-03 16:44:29 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /var/lib/gems/3.0.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/3.0.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.7ms | Allocations: 827)
+Completed 200 OK in 15ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 6695)
+
+
+Started GET "/users" for ::1 at 2023-04-03 16:44:41 +0000
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 134)
+  Rendered layout layouts/application.html.erb (Duration: 90.4ms | Allocations: 35046)
+Completed 200 OK in 93ms (Views: 92.0ms | ActiveRecord: 0.0ms | Allocations: 36336)
+
+
+Started GET "/users/745" for ::1 at 2023-04-03 16:44:52 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"745"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 107)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2547)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 2931)
+
+
+Started GET "/users/745/posts" for ::1 at 2023-04-03 16:45:13 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"745"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 132)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2813)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 3821)
+
+
+Started GET "/users/745/posts/5" for ::1 at 2023-04-03 16:45:24 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"user_id"=>"745", "id"=>"5"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 110)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2513)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 2917)
+
+
+Started GET "/users/745/posts/5" for ::1 at 2023-04-03 16:46:58 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"user_id"=>"745", "id"=>"5"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 14056)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms | Allocations: 14920)
+
+
+Started GET "/users/745/posts/" for ::1 at 2023-04-03 16:47:06 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"745"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2401)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 2736)
+
+
+Started GET "/users/745/" for ::1 at 2023-04-03 16:47:16 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"745"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2698)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 3555)
+
+
+Started GET "/users/" for ::1 at 2023-04-03 16:47:26 +0000
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2412)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 2741)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-03 16:49:19 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /var/lib/gems/3.0.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/3.0.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.2ms | Allocations: 827)
+Completed 200 OK in 9ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 6695)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-04-03 16:49:30 +0000
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 134)
+  Rendered layout layouts/application.html.erb (Duration: 82.3ms | Allocations: 34677)
+Completed 200 OK in 87ms (Views: 84.8ms | ActiveRecord: 0.0ms | Allocations: 35967)
+
+
+Started GET "/users/745" for 127.0.0.1 at 2023-04-03 16:49:39 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"745"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 109)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2473)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 2864)
+
+
+Started GET "/users/745/posts" for 127.0.0.1 at 2023-04-03 16:49:49 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"745"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 132)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 2776)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 3784)
+
+
+Started GET "/users/745/posts/3" for 127.0.0.1 at 2023-04-03 16:49:56 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"user_id"=>"745", "id"=>"3"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 110)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2482)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 2886)
+
+
