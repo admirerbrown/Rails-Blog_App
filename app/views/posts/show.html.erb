@@ -1,1 +1,18 @@
-<h1>showing post details of selected post</h1>
+<section id="post_info">
+  <div class="post_desc">
+    <div>
+      <h1><%= @post.title %> by <%= @post.author.name%></h1>
+      <h4>Comments:<%= @post.comments_counter%>,  Likes:<%= @post.likes_counter%></h4>
+    </div>
+    <p class="P_text"><%= @post.text%></p>
+  </div>
+  
+  <div class="com_on_Post">
+  <h3>comments:</h3>
+    <ul>
+      <% @post_comments.each do |comment| %>
+        <li><%= comment.user.name %>: <%= comment.text %></li>
+      <% end %>
+    </ul>
+  </div>
+</section>

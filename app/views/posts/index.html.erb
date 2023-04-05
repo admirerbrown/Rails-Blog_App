@@ -1,1 +1,48 @@
-<h1>showing lists of all posts for a user</h1>
+<section id="user_details">
+  <div class="profile_container">
+    <div class="user_photo"><%= @user.photo %></div>
+    <div class="userInfo">
+      <h1 class="userName"><%= @user.name %></h1>
+      <h3 class="postCount">
+        Number of posts: <%= @user.posts_counter %>
+      </h3>
+    </div>
+  </div>
+<br>
+  <div class="posts_container">
+    <% @user_posts.each do |post| %>
+      <div class="post">
+        <h3 class="user_photo"><%= post.title %></h3>
+        <p class="post_text"><%= post.text %></p>
+        <p class="commentsCount">
+          Comments: <%= post.comments_counter %>,
+          Likes: <%= post.likes_counter %>
+        </p>
+      </div>
+      <%= link_to "view post", user_post_path(@user, post) %>
+      <div>
+      <h4>Comments</h4>
+        <% @post_comments.each do |comment| %>
+          <ul>
+            <% if comment.post_id === post.id %>
+              <li><%= comment.user.name %>: <%= comment.text %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+      <br>
+    <% end %>
+    <br>
+    <button class="pagenation">
+      Next
+    </button>
+  </div>
+</section>
+<%# Comment.create(post_id: 1, user_id: 1, text: 'first comment on post 1!' ).update_comments_counter()
+      Comment.create(post_id: 1, user_id: 1, text: 'second comment on post 1!' ).update_comments_counter()
+      Comment.create(post_id: 2, user_id: 2, text: 'first comment on post 2!' ).update_comments_counter()
+      Comment.create(post_id: 2, user_id: 2, text: 'second comment on post 2!' ).update_comments_counter() %>
+<%# Post.create(author_id: 1, title: 'Hello', text: 'This is my new post').update_post_counter()
+        Post.create(author_id: 1, title: 'Hello', text: 'This is my other post').update_post_counter()
+        Post.create(author_id: 2, title: 'Hello', text: 'This is my very second post').update_post_counter()
+        Post.create(author_id: 2, title: 'Hello', text: 'This is my very third post').update_post_counter() %>
