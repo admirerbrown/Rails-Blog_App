@@ -1,4 +1,5 @@
 <section id="user_details">
+
       <div class="userInfo">
       <div class="user_photo"><%= @user.photo %></div>
       <div class="badge">
@@ -17,7 +18,7 @@
   </div>
   <br>
   <div class="posts_container">
-    <% @user_posts.each_with_index do |post, index| %>
+    <% @recent_posts.each_with_index do |post, index| %>
       <div class="post">
         <h3>Post #<%= index+1 %></h3>
         <p class="post_text"><%= post.text %></p>
