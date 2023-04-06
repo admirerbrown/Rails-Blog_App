@@ -12,7 +12,8 @@
         Post.create(author_id: 2, title: 'Hello', text: 'This is my very third post').update_post_counter()
 
 
-    User.create(name: 'Tom', photo: 'https:photos/F_-0BxGuVvo', bio: 'Teacher from Canada.').save()
-    User.create(name: 'Lilly', photo: 'https:///photos/F_-0BxGuVvo', bio: 'Teacher from Poland.').save()
-    User.create(name: 'Joyce', photo: 'https:///photos/F_-0BxGuVvo', bio: 'Teacher from Austria.').save()
-    User.create(name: 'Moses', photo: 'https:///photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.').save()
+   
+    User.create(name: 'kelly', photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80', bio: 'Teacher from Mexico.').save()
+    User.create(name: 'Louis', photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80', bio: 'Teacher from Mexico.').save()
+    User.create(name: 'Favor', photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80', bio: 'Teacher from Mexico.').save()
+    User.create(name: 'Tommy', photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80', bio: 'Teacher from Mexico.').save()

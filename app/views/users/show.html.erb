@@ -1,7 +1,7 @@
 <section id="user_details">
 
       <div class="userInfo">
-      <div class="user_photo"><%= @user.photo %></div>
+      <div class="user_photo"><%= image_tag @user.photo, class: "profile-image"%></div>
       <div class="badge">
         <h1 class="userName"><%= @user.name %></h1>
         <div class="badge_nums">
