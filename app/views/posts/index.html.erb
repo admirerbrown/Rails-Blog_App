@@ -1,1 +1,43 @@
-<h1>showing lists of all posts for a user</h1>
+<section id="user_details">
+  <div class="userInfo">
+    <div class="user_photo"><%= image_tag @user.photo, class: "profile-image"%></div>
+    <div class="badge">
+      <h1 class="userName"><%= @user.name %></h1>
+      <div class="badge_nums">
+        <h3 class="postCount">
+          Number of posts: <%= @user.posts_counter %>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="posts_container">
+    <% @user_posts.each do |post| %>
+      <div class="post">
+        <h3><%= post.title %></h3>
+        <p class="post_text"><%= post.text %></p>
+        <p class="commentsCount">
+          Comments: <%= post.comments_counter %>,
+          Likes: <%= post.likes_counter %>
+        </p>
+        <%= link_to "view post", user_post_path(@user, post) %>
+      </div>
+      <div class="post">
+        <h4>Comments</h4>
+        <% @post_comments.each do |comment| %>
+          <ul>
+            <% if comment.post_id === post.id %>
+              <li><%= comment.user.name %>: <%= comment.text %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+      <br>
+    <% end %>
+    <br>
+    <button class="seePosts">
+      Next
+    </button>
+  </div>
+</section>

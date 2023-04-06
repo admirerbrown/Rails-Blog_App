@@ -1,1 +1,37 @@
-<h1>here is the details for a given user</h1>
+<section id="user_details">
+
+      <div class="userInfo">
+      <div class="user_photo"><%= image_tag @user.photo, class: "profile-image"%></div>
+      <div class="badge">
+        <h1 class="userName"><%= @user.name %></h1>
+        <div class="badge_nums">
+          <h3 class="postCount">
+          Number of posts: <%= @user.posts_counter %>
+        </h3>
+        </div>
+      </div>
+    </div>
+  <br>
+  <div class="bio">
+    <h2>Bio</h2>
+    <p class="bio_text"><%= @user.bio %></p>
+  </div>
+  <br>
+  <div class="posts_container">
+    <% @recent_posts.each_with_index do |post, index| %>
+      <div class="post">
+        <h3>Post #<%= index+1 %></h3>
+        <p class="post_text"><%= post.text %></p>
+        <p class="commentsCount">
+          Comments: <%= post.comments_counter %>,
+          Likes: <%= post.likes_counter %>
+        </p>
+      </div>
+      <br>
+    <% end %>
+    <br>
+    <button class="seePosts">
+      <%= link_to "See all posts", user_posts_path(@user) %>
+    </button>
+  </div>
+</section>
