@@ -1,27 +1,31 @@
 <section id="user_details">
-  <div class="profile_container">
+  <div class="userInfo">
     <div class="user_photo"><%= @user.photo %></div>
-    <div class="userInfo">
+    <div class="badge">
       <h1 class="userName"><%= @user.name %></h1>
-      <h3 class="postCount">
-        Number of posts: <%= @user.posts_counter %>
-      </h3>
+      <div class="badge_nums">
+        <h3 class="postCount">
+          Number of posts: <%= @user.posts_counter %>
+        </h3>
+      </div>
     </div>
   </div>
-<br>
+  <br>
+  <br>
   <div class="posts_container">
     <% @user_posts.each do |post| %>
       <div class="post">
-        <h3 class="user_photo"><%= post.title %></h3>
+        <h3><%= post.title %></h3>
         <p class="post_text"><%= post.text %></p>
         <p class="commentsCount">
           Comments: <%= post.comments_counter %>,
           Likes: <%= post.likes_counter %>
         </p>
+        <%= link_to "view post", user_post_path(@user, post) %>
       </div>
-      <%= link_to "view post", user_post_path(@user, post) %>
-      <div>
-      <h4>Comments</h4>
+      
+      <div class="post">
+        <h4>Comments</h4>
         <% @post_comments.each do |comment| %>
           <ul>
             <% if comment.post_id === post.id %>
@@ -33,7 +37,7 @@
       <br>
     <% end %>
     <br>
-    <button class="pagenation">
+    <button class="seePosts">
       Next
     </button>
   </div>

@@ -11,4 +11,3 @@ class PostsController < ApplicationController
     @post_comments = Comment.where(post_id: @post)
   end
 end
-
