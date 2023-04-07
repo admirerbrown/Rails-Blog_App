@@ -64,6 +64,7 @@ h3 {
 .seePosts {
   display: block;
   margin: 0 auto;
+  font-size: 20px;
 }
 
 .unit {
@@ -84,4 +85,43 @@ ul {
 
 .P_text {
   font-size: 16px;
+}
+
+.btns {
+  display: flex;
+}
+
+.form-container {
+  display: flex;
+  border: 4px solid #000;
+  flex-direction: column;
+  height: 500px;
+  width: 500px;
+  align-items: center;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.form_msg {
+  height: 100px;
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.form_title {
+  height: 30px;
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add_like {
+  display: flex;
+  gap: 10px;
 }
