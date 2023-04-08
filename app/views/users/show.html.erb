@@ -30,8 +30,17 @@
       <br>
     <% end %>
     <br>
+    <div class="btns">
     <button class="seePosts">
       <%= link_to "See all posts", user_posts_path(@user) %>
     </button>
+    <button class="seePosts createPost">
+      <%= link_to "create post", new_user_post_path(@user) %>
+    </button>
+    <button class="seePosts home">
+      <%=link_to 'home',  '/users' %>
+    </button>
+    </div>
+    
   </div>
 </section>
