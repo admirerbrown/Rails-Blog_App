@@ -1,4 +1,5 @@
 require 'rails_helper'
+# rubocop:disable Metrics/BlockLength
 
 RSpec.feature 'Posts', type: :feature do
   user = User.create(name: 'Example User', bio: 'Example Bio', photo: 'https://i.imgur.com/8Qq7YQq.jpg')
@@ -39,5 +40,6 @@ RSpec.feature 'Posts', type: :feature do
     comment = Comment.create(text: 'Example Text', user_id: user.id, post_id: post.id)
     comment.update_comments_counter
     expect(page).to have_content(comment.text)
+    # rubocop:enable Metrics/BlockLength
   end
 end

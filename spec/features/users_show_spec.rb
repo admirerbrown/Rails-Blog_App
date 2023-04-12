@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+# rubocop:disable Metrics/BlockLength
 RSpec.feature 'UsersShows', type: :feature do
   let!(:user) { User.find(2) } # Get the user with ID 2 from the database
 
@@ -51,4 +51,5 @@ RSpec.feature 'UsersShows', type: :feature do
     click_link 'See all posts'
     expect(current_path).to eq(user_posts_path(user))
   end
+  # rubocop:enable Metrics/BlockLength
 end
