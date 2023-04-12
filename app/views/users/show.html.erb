@@ -22,6 +22,9 @@
       <div class="post">
         <h3>Post #<%= index+1 %></h3>
         <p class="post_text"><%= post.text %></p>
+        
+          <%= link_to "view post", user_post_path(@user, post) %>
+
         <p class="commentsCount">
           Comments: <%= post.comments_counter %>,
           Likes: <%= post.likes_counter %>

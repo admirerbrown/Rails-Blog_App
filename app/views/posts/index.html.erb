@@ -43,9 +43,6 @@
     <% end %>
     <br>
     <div class="btns">
-      <button class="seePosts">
-        Next
-      </button>
       <button class="seePosts home">
         <%=link_to 'home',  '/users' %>
       </button>
@@ -55,3 +52,5 @@
     </div>
   </div>
 </section>
+
+<%== pagy_nav(@pagy) %>

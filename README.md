@@ -140,6 +140,12 @@ To run tests, run the following command accordingly:
 - GitHub: [@admirerbrown](https://github.com/admirerbrown)
 - Twitter: [@admirerbrown](https://twitter.com/brown_admirer)
 - LinkedIn: [@samuelkyere](https://www.linkedin.com/in/samuel-ntow-kyere/)
+  
+👤 **Roy Jumah**
+
+- GitHub: [@RoyJumah](https://github.com/RoyJumah)
+- Twitter: [@\_royissues](https://twitter.com/_royissues)
+- LinkedIn: [Roy Jumah](https://www.linkedin.com/in/roy-jumah/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
