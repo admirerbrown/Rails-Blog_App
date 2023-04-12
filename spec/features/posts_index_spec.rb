@@ -34,7 +34,22 @@ RSpec.feature 'Posts', type: :feature do
     user.posts.each do |pt|
       post_id = pt.id
       next unless page.has_link?('view post', href: user_post_path(user, post_id))
+
       expect(current_path).to eq(user_post_path(user, post_id))
+    end
+  end
+
+  describe 'show section of pagination' do
+    it 'display the page if there are more posts than fit on the view.' do
+      15.times do
+        Post.create(
+          title: 'Example Title',
+          text: 'Example Text',
+          author_id: user.id
+        )
+      end
+      visit "/users/#{user.id}/posts"
+      expect(page).to have_text('1')
     end
   end
 end

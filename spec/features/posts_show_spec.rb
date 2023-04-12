@@ -1,4 +1,5 @@
 require 'rails_helper'
+
 RSpec.feature 'Posts', type: :feature do
   user = User.create(name: 'Example User', bio: 'Example Bio', photo: 'https://i.imgur.com/8Qq7YQq.jpg')
   post = Post.create(title: 'Example Title', text: 'Example Text', author_id: user.id)
