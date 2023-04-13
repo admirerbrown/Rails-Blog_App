@@ -121,7 +121,8 @@ ul {
   justify-content: space-between;
 }
 
-.add_like {
+.add_like,
+.option {
   display: flex;
   gap: 10px;
 }

@@ -12,6 +12,24 @@
   </head>
 
   <body>
+   <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+       <nav class="bg-blue-600">
+  <div class="mx-auto px-4 py-2">
+    <div class="flex justify-between">
+      
+      <div class="nav">
+        <ul class="nav-items">
+          <% if current_user %>
+            <li><%= link_to "Edit Account", edit_user_registration_path, class: "" %></li>
+            <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "" %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<br>
     <%= yield %>
   </body>
 </html>
