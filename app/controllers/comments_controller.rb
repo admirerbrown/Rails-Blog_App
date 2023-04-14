@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @comment = Comment.new
   end
@@ -16,6 +18,34 @@ class CommentsController < ApplicationController
       flash[:alert] = "Couln't add Comment!"
       render :new, status: :unprocessable_entity
     end
+  end
+
+  # def destroy
+  #   @comment = Comment.find(params[:id])
+  #   @post = Post.find(params[:post_id])
+  #   authorize! :destroy, @comment
+
+  #   if @comment.destroy
+  #     flash[:success] = 'Comment successfully deleted.'
+  #     # redirect_to user_posts_path
+  #   else
+  #     flash[:error] = 'There was an error deleting the comment.'
+  #     redirect_to '/'
+  #   end
+  # end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @post = Post.find(params[:post_id])
+
+    # @comment = current_user.comments.find_by(id: params[:id])
+    if @comment&.destroy
+      flash[:success] = 'Comment deleted!'
+      @comment.post.decrement!(:comments_counter) # Decrease the comments count by 1 for the post
+    else
+      flash[:danger] = 'Comment not deleted!'
+    end
+    redirect_to "/users/#{current_user.id}"
   end
 
   private
