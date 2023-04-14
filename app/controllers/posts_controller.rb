@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
+  before_action :authenticate_user!
+
   def index
     @user = User.find(params[:user_id])
     @pagy, @user_posts = pagy(Post.where(author_id: @user.id).includes(:author))
@@ -32,29 +34,17 @@ class PostsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @post = Post.find(params[:id])
-  #   authorize! :destroy, @post
-
-  #   if @post.destroy
-  #     flash[:success] = 'Post successfully deleted.'
-  #     redirect_to user_posts_path
-  #   else
-  #     flash[:error] = 'There was an error deleting the post.'
-  #     redirect_to @post
-  #   end
-  # end
-
   def destroy
-    puts 'Destroying comment...'
-    @post = current_user.posts.find_by(id: params[:id])
+    @post = Post.find(params[:id])
+
     if @post&.destroy
       flash[:success] = 'Post deleted!'
-      current_user.decrement!(:posts_counter) # Decrease the post count by 1 for the current_user
+      @post.author.decrement!(:posts_counter) # Decrease the post count by 1 for the post's author
     else
       flash[:danger] = 'Post not deleted!'
     end
-    redirect_to user_posts_path(current_user) # Redirect to the user's posts page
+
+    redirect_to "/users/#{current_user.id}"
   end
 
   private

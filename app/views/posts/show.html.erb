@@ -4,7 +4,7 @@
       <h2><%= @post.title %> by <%= @post.author.name%></h2>
       <h4>Comments:<%= @post.comments_counter%>,  Likes:<%= @post.likes_counter%></h4>
       <% if can? :destroy, @post %>
-        <%= button_to "Delete Post", "/posts/#{@post.id}", method: :delete, data: {confirm: "Are you sure you want to delete this post?"}, class: "bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-all duration-200" %>
+        <%= button_to "Delete Post", "/posts/#{@post.id}", method: :delete, data: {confirm: "Are you sure you want to delete this post?"} %>
       <% end %>
     </div>
     <p class="P_text"><%= @post.text%></p>
