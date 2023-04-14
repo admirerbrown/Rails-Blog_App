@@ -3,18 +3,23 @@
     <div class="unit">
       <h2><%= @post.title %> by <%= @post.author.name%></h2>
       <h4>Comments:<%= @post.comments_counter%>,  Likes:<%= @post.likes_counter%></h4>
+      <% if can? :destroy, @post %>
+        <%= button_to "Delete Post", "/posts/#{@post.id}", method: :delete, data: {confirm: "Are you sure you want to delete this post?"} %>
+      <% end %>
     </div>
     <p class="P_text"><%= @post.text%></p>
   </div>
-  
   <div class="com_on_Post">
-  <h3>comments:</h3>
+    <h3>comments:</h3>
     <ul>
       <% @post_comments.each do |comment| %>
-        <li><%= comment.user.name %>: <%= comment.text %></li>
+        <li><%= comment.user.name %>: <%= comment.text %>
+          <% if can? :destroy, comment %>
+            <%= button_to "Delete Comment",delete_comment_path(post_id: @post.id, id: comment.id), method: :delete, data: { confirm: "Are you sure you want to delete this comment?" } %>
+          <% end %>
+        </li>
       <% end %>
     </ul>
   </div>
   <p class="back"><%=link_to 'Back to posts', user_posts_path %></p>
-
 </section>

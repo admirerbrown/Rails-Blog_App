@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+  before_action :authenticate_user!
+
   def index
     @user = User.find(params[:user_id])
     @pagy, @user_posts = pagy(Post.where(author_id: @user.id).includes(:author))
@@ -29,6 +32,19 @@ class PostsController < ApplicationController
       flash[:alert] = "Couln't create post!"
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+
+    if @post&.destroy
+      flash[:success] = 'Post deleted!'
+      @post.author.decrement!(:posts_counter) # Decrease the post count by 1 for the post's author
+    else
+      flash[:danger] = 'Post not deleted!'
+    end
+
+    redirect_to "/users/#{current_user.id}"
   end
 
   private
